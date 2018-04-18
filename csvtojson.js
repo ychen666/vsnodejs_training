@@ -9,6 +9,10 @@ csv2json(process.argv[2])
        // combine csv header row and csv line to a json object
        // jsonObj.a ==> 1 or 4
        console.log(jsonObj)
+       fs.writeFile("outputjson.txt",jsonObj,function(error){
+       if (error) return console.error(error)
+       
+       })
    })
    .on('done',(error)=>{
        console.log('end')
